@@ -10,8 +10,6 @@ public class PersonService implements IPersonService {
 
     private IPersonDao personDao;
 
-
-
     public void sayHello() {
         personDao.sayHello();
     }
