@@ -1,26 +1,16 @@
 package com.gj.domain;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 public class Person {
     private int id;
     private String name;
     private int age;
-
-    private String url;
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
-
-    private String user;
-    private String pwd;
+    private List<String> legs;
+    private Map<String,String> legsMap;
+    private Set<String> legsSet;
 
     public void setId(int id) {
         this.id = id;
@@ -34,15 +24,27 @@ public class Person {
         this.age = age;
     }
 
+    public void setLegs(List<String> legs) {
+        this.legs = legs;
+    }
+
+    public void setLegsMap(Map<String, String> legsMap) {
+        this.legsMap = legsMap;
+    }
+
+    public void setLegsSet(Set<String> legsSet) {
+        this.legsSet = legsSet;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
-                ", url='" + url + '\'' +
-                ", user='" + user + '\'' +
-                ", pwd='" + pwd + '\'' +
+                ", legs=" + legs +
+                ", legsMap=" + legsMap +
+                ", legsSet=" + legsSet +
                 '}';
     }
 }

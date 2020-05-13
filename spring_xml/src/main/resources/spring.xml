@@ -21,11 +21,25 @@
     </bean>
 
     <bean id="person" class="com.gj.domain.Person">
-        <property name="id" value="${person.id}"/>
-        <property name="age" value="${person.age}"/>
-        <property name="name" value="${person.name}"/>
-        <property name="pwd" value="${db.password}"/>
-        <property name="user" value="${db.username}"/>
-        <property name="url" value="${db.url}"/>
+        <property name="id" value="${person.id}"></property>
+        <property name="age" value="${person.age}"></property>
+        <property name="name" value="${person.name}"></property>
+        <property name="legs">
+            <list>
+                <value>first</value>
+                <value>second</value>
+            </list>
+        </property>
+        <property name="legsMap">
+            <map>
+                <entry key="key1" value="first"></entry>
+                <entry key="key2" value="second"></entry>
+            </map>
+        </property>
+        <property name="legsSet">
+            <set>
+                <value>legs</value>
+            </set>
+        </property>
     </bean>
 </beans>
