@@ -42,4 +42,26 @@
             </set>
         </property>
     </bean>
+
+    <bean name="account1,account2,account3" class="com.gj.domain.Account">
+        <property name="name">
+            <value>hello1</value>
+        </property>
+    </bean>
+
+    <bean class="com.gj.domain.Account">
+        <property name="name">
+            <value>hello2</value>
+        </property>
+    </bean>
+
+    <bean class="com.gj.domain.Account">
+        <property name="name">
+            <value>hello3</value>
+        </property>
+    </bean>
+
+    <bean id="animal" class="com.gj.domain.Animal">
+        <constructor-arg name="name" value="dog"></constructor-arg>
+    </bean>
 </beans>
