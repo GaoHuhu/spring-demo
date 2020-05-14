@@ -2,11 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+        https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
 <!--    <context:property-placeholder location="classpath:person.properties"></context:property-placeholder>-->
     <context:property-placeholder location="classpath*:*.properties"></context:property-placeholder>
@@ -64,4 +64,16 @@
     <bean id="animal" class="com.gj.domain.Animal">
         <constructor-arg name="name" value="dog"></constructor-arg>
     </bean>
+
+    <bean id="myAspect" class="com.gj.aspect.MyAspect"></bean>
+
+    <aop:config>
+        <aop:aspect ref="myAspect">
+            <aop:after method="logAfter" pointcut="execution(void com.gj.service.impl.PersonService.sayHello())"></aop:after>
+        </aop:aspect>
+
+        <aop:aspect ref="myAspect">
+            <aop:before method="logBefore" pointcut="execution(void com.gj.service.impl.PersonService.sayHello())"></aop:before>
+        </aop:aspect>
+    </aop:config>
 </beans>
